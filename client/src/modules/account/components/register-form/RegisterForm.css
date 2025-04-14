@@ -1,0 +1,508 @@
+/* RegisterForm.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.register-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f9fdfb 0%, #e1f5e9 100%);
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 1000px;
+  min-height: 600px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.register-card:hover {
+  transform: translateY(-5px);
+}
+
+.register-content {
+  display: flex;
+  height: 100%;
+}
+
+.register-left {
+  flex: 1.2;
+  background: linear-gradient(135deg, #4ecca3 0%, #2dc893 100%);
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-left::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.register-left::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.register-left-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.register-logo-icon {
+  margin-right: 10px;
+  font-size: 2rem;
+  animation: pulse 2s infinite;
+}
+
+.register-greeting-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.register-greeting-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  opacity: 0.9;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.register-image {
+  width: 100%;
+  height: 250px;
+  background-image: url('https://img.freepik.com/free-vector/hospital-healthcare-staff-concept-illustration_114360-8455.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 30px 0;
+  animation: float 6s ease-in-out infinite;
+}
+
+.register-link-text {
+  font-size: 1rem;
+  margin-top: auto;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.register-link {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.register-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.register-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.register-right {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-form-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.register-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.register-subtitle {
+  color: #666;
+  margin-bottom: 25px;
+  animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.register-form {
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.register-form-group {
+  margin-bottom: 25px;
+}
+
+.register-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.register-input-wrapper:focus-within {
+  border-color: #2dc893;
+  box-shadow: 0 0 0 3px rgba(45, 200, 147, 0.1);
+}
+
+.register-input-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  color: #4ecca3;
+}
+
+.register-input-wrapper input {
+  flex: 1;
+  padding: 15px 15px 15px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #333;
+  width: 100%;
+}
+
+.register-input-wrapper input::placeholder {
+  color: #aaa;
+}
+
+.error-input {
+  border-color: #ff6b6b !important;
+}
+
+.error-message {
+  display: block;
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  animation: shake 0.5s ease;
+}
+
+.register-password-toggle {
+  padding: 0 15px;
+  cursor: pointer;
+  color: #6c757d;
+  transition: color 0.3s ease;
+}
+
+.register-password-toggle:hover {
+  color: #2dc893;
+}
+
+.register-password-strength {
+  margin-bottom: 20px;
+}
+
+.register-strength-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.register-strength-text {
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+.register-strength-text.register-strength-0 { color: #ff6b6b; }
+.register-strength-text.register-strength-1 { color: #ffa56b; }
+.register-strength-text.register-strength-2 { color: #ffd56b; }
+.register-strength-text.register-strength-3 { color: #86e7b8; }
+.register-strength-text.register-strength-4 { color: #2dc893; }
+
+.register-strength-meter {
+  display: flex;
+  gap: 5px;
+}
+
+.register-strength-bar {
+  flex: 1;
+  height: 6px;
+  background-color: #eee;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.register-strength-bar.active:nth-child(1) { background-color: #ff6b6b; }
+.register-strength-bar.active:nth-child(2) { background-color: #ffd56b; }
+.register-strength-bar.active:nth-child(3) { background-color: #86e7b8; }
+.register-strength-bar.active:nth-child(4) { background-color: #2dc893; }
+
+.register-terms-privacy {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.register-terms-label {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.register-terms-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.register-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #f8f9fa;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.register-terms-label:hover input ~ .register-checkmark {
+  border-color: #2dc893;
+}
+
+.register-terms-label input:checked ~ .register-checkmark {
+  background-color: #2dc893;
+  border-color: #2dc893;
+}
+
+.register-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.register-terms-label input:checked ~ .register-checkmark:after {
+  display: block;
+}
+
+.register-terms-label .register-checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.register-terms-link {
+  color: #2dc893;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.register-terms-link:hover {
+  color: #24a57b;
+  text-decoration: underline;
+}
+
+.register-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #4ecca3 0%, #2dc893 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(45, 200, 147, 0.2);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+.register-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.register-button:hover::before {
+  left: 100%;
+}
+
+.register-button.loading {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.register-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+  .register-content {
+    flex-direction: column;
+  }
+  
+  .register-left {
+    padding: 30px;
+  }
+  
+  .register-image {
+    height: 150px;
+    margin: 15px 0;
+  }
+  
+  .register-greeting-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .register-container {
+    padding: 10px;
+  }
+  
+  .register-card {
+    border-radius: 15px;
+  }
+  
+  .register-left, .register-right {
+    padding: 20px;
+  }
+}

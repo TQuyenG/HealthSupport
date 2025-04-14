@@ -1,0 +1,442 @@
+.account_management_popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Thêm class để khóa scroll trên body */
+body.popup-open {
+  overflow: hidden;
+}
+
+.account_management_popup_content {
+  margin-top: 80px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: auto;
+  padding: 30px;
+  position: relative;
+}
+
+.account_management_close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: #9e9e9e;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.account_management_close:hover {
+  color: #6db193;
+}
+
+.account_management_header {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.account_management_header h2 {
+  color: #6db193; /* Pastel green for healthcare theme */
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.account_subtitle {
+  color: #9e9e9e;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.account_management_layout {
+  display: flex;
+  gap: 30px;
+}
+
+.account_management_sidebar {
+  flex: 0 0 180px;
+}
+
+.account_management_main_content {
+  flex: 1;
+}
+
+.account_management_avatar_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar_wrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #6db193; /* Pastel green for healthcare theme */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account_management_avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.account_management_avatar_buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.change_avatar_button, .delete_avatar_button, .change_password_button {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  width: 100%;
+  text-align: center;
+}
+
+.change_avatar_button {
+  background-color: #8dc3a7;
+  color: white;
+}
+
+.change_avatar_button:hover {
+  background-color: #6db193;
+}
+
+.delete_avatar_button {
+  background-color: #acacac;
+  color: white;
+}
+
+.delete_avatar_button:hover {
+  background-color: #d5d5d5;
+}
+
+.change_password_button {
+  background-color: #b18f6d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.change_password_button:hover {
+  background-color: #b88755;
+}
+
+.account_management_avatar_selector_container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.account_management_avatar_selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.account_management_avatar_option {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.account_management_avatar_option:hover {
+  transform: scale(1.1);
+}
+
+.account_management_avatar_option.selected {
+  border-color: #6db193; /* Pastel green for healthcare theme */
+}
+
+.account_management_form_fields {
+  width: 100%;
+}
+
+.account_management_form_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.account_management_form_group {
+  margin-bottom: 20px;
+}
+
+.account_management_form_group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #757575;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.account_management_form_group input,
+.account_management_form_group textarea,
+.account_management_form_group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.account_management_form_group input:focus,
+.account_management_form_group textarea:focus,
+.account_management_form_group select:focus {
+  border-color: #6db193; /* Pastel green for healthcare theme */
+  outline: none;
+}
+
+.account_management_input_error {
+  border-color: #f44336 !important;
+}
+
+.account_management_error_message {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.readonly-field {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.social_icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social_icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e0e0e0;
+  background-color: transparent;
+  color: #6db193; /* Pastel green for healthcare theme */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.social_icon:hover {
+  background-color: #6db193; /* Pastel green for healthcare theme */
+  color: white;
+  border-color: #6db193;
+}
+
+.social_icon span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.account_management_form_actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.update_button {
+  background-color: #6db193; /* Pastel green for healthcare theme */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 36px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(109, 177, 147, 0.3); /* Pastel green shadow */
+}
+
+.update_button:hover {
+  background-color: #5a9f80; /* Darker pastel green */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(109, 177, 147, 0.4);
+}
+
+.delete_account_button {
+  background-color: #f5f5f5;
+  color: #f44336;
+  border: 1px solid #f44336;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.delete_account_button:hover {
+  background-color: #fff0f0;
+  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.2);
+}
+
+.account_management_delete_confirm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1100;
+}
+
+.account_management_delete_confirm_content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.account_management_delete_confirm_icon {
+  color: #f44336;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.account_management_delete_confirm h3 {
+  margin: 0 0 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.account_management_delete_confirm p {
+  margin-bottom: 30px;
+  color: #757575;
+  line-height: 1.5;
+}
+
+.account_management_delete_confirm_actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.account_management_button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.account_management_danger {
+  background-color: #f44336;
+  color: white;
+}
+
+.account_management_danger:hover {
+  background-color: #d32f2f;
+}
+
+.account_management_secondary {
+  background-color: #e0e0e0;
+  color: #757575;
+}
+
+.account_management_secondary:hover {
+  background-color: #d5d5d5;
+}
+
+.account_management_loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #6db193; /* Pastel green for healthcare theme */
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .account_management_layout {
+    flex-direction: column;
+  }
+  
+  .account_management_sidebar {
+    flex: none;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .account_management_form_grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .account_management_popup_content {
+    padding: 20px;
+  }
+  
+  .account_management_form_actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .delete_account_button {
+    margin-top: 15px;
+  }
+}

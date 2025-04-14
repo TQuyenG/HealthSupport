@@ -1,0 +1,44 @@
+/* Layout.css */
+
+.app-container {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+}
+
+.app-content {
+  flex: 1;
+  min-height: calc(100vh - 90px);
+}
+
+.app-content.with-sidebar {
+  transition: margin-left 0.3s ease;
+}
+
+body.sidebar-collapsed .app-content.with-sidebar {
+  margin-left: 70px;
+}
+
+/* Đảm bảo footer không bị ảnh hưởng */
+footer {
+  margin-top: auto;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 20px 0;
+  position: relative; /* Đảm bảo footer không bị đè bởi các thành phần fixed */
+  z-index: 999; /* Đặt z-index thấp hơn sidebar để không bị đè */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-content,
+  body.sidebar-collapsed .app-content.with-sidebar {
+    margin-left: 0; /* Không có sidebar trên mobile */
+  }
+}

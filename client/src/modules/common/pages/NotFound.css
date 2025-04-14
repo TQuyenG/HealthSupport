@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.not_found_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #E9F6EE 0%, #D4EDDA 100%);
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.not_found_content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.not_found_text {
+  position: relative;
+  z-index: 4;
+  padding: 20px;
+}
+
+.not_found_title {
+  font-size: 10rem;
+  font-weight: 800;
+  color: #1B4332;
+  margin-bottom: 20px;
+  animation: not_found_fadeIn 1s ease-in-out, not_found_blink 2s infinite;
+}
+
+.not_found_subtitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1B4332;
+  margin-bottom: 20px;
+  animation: not_found_fadeIn 1.2s ease-in-out;
+}
+
+.not_found_description {
+  font-size: 1.2rem;
+  color: #1B4332;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 20px;
+  animation: not_found_fadeIn 1.4s ease-in-out;
+}
+
+.not_found_button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #74C69D 0%, #49A381 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  animation: not_found_fadeIn 1.6s ease-in-out;
+}
+
+.not_found_button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(73, 163, 129, 0.2);
+}
+
+@keyframes not_found_fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes not_found_blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .not_found_container {
+    padding: 10px;
+  }
+
+  .not_found_title {
+    font-size: 6rem;
+  }
+
+  .not_found_subtitle {
+    font-size: 1.8rem;
+  }
+
+  .not_found_description {
+    font-size: 1rem;
+  }
+
+  .not_found_button {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .not_found_title {
+    font-size: 4rem;
+  }
+
+  .not_found_subtitle {
+    font-size: 1.5rem;
+  }
+
+  .not_found_description {
+    font-size: 0.9rem;
+  }
+}

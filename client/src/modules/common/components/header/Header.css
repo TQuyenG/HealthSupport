@@ -1,0 +1,109 @@
+/* Reset và base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f7fb;
+  color: #333;
+  line-height: 1.6; /* Thêm line-height mặc định */
+}
+
+/* Header styling */
+.header {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Nunito', sans-serif;
+  border-bottom: 1px solid #e0e0e0;
+  height: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: fixed; /* Cố định header */
+  top: 0;
+  width: 100%;
+  z-index: 10001; /* Cao hơn navbar để không bị đè */
+}
+
+/* Left section with contact information */
+.header-left {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.contact-item a {
+  color: #49A381;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+  color: #3d8569;
+}
+
+.contact-item{
+  color: #49A381;
+}
+.contact-item:hover {
+  color: #3d8569;
+}
+.icon {
+  color: #49A381;
+  font-size: 16px;
+  transition: color 0.2s ease;
+  margin-top: 2px;
+}
+/* Centered text section */
+.header-center {
+  flex: 1; /* Chiếm không gian còn lại */
+}
+
+/* Right section with greeting */
+.header-right {
+  font-size: 16px;
+  font-weight: 500;
+  color: #49A381;
+}
+
+/* Typing animation for welcome message */
+.typing-animation {
+  border-right: 2px solid #49A381;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  display: inline-block;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #49A381 }
+}
+
+/* Divider line */
+.divider {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 20px;
+  width: 2px;
+  background-color: #ddd;
+}
